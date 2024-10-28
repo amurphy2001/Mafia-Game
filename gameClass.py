@@ -22,11 +22,11 @@ class GameClass:
     # Method to add a new player to the game
     def add_player(self):
         # Prompt the user to enter the player's name and store it in lowercase
-        player_name = input("Enter player name:").lower()
+        player_name = input("Enter player name: ").lower()
         print("\n")  # Print a new line
         
         # Prompt the user to assign a role to the player (mafia, villager, doctor)
-        player_role = input("Enter role(mafia, villager, doctor):").lower()
+        player_role = input("Enter role(mafia, villager, doctor): ").lower()
         print("\n")  # Print a new line
 
         # Add the player as a Player, with a role and name
@@ -57,7 +57,7 @@ class GameClass:
                 # Generate a list of names of alive players except the current player
                 alive_players = [p.name for p in self.player_list if p.status == "alive" and p.name != player.name]
                 # Display alive players
-                print("Players available to vote for:", ', '.join(alive_players)) 
+                print("Players available to vote for: ", ', '.join(alive_players)) 
                 # Prompt the player to enter the name of the player they want to eliminate
                 vote_for = input(f"{player.name}, who do you vote to eliminate? ")
                 vote_for = vote_for.lower()  # Convert input to lowercase for consistency
