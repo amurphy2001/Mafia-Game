@@ -12,7 +12,8 @@ Revisions:
     - 10/25/2024: Jack - Created the three main files and implemented the basic game logic
     - 10/27/2024: Ethan - Created the day_phase and win_condion methods in gameClass
                         - Created this header
-    - [Date]: [Name] - Blah Blah Blah
+    - [Date]: [Aiden] - Implemented the main loop to complete game logic and reset/exit ability
+                      - Cleaned outputs
     - [Date]: [Name] - Blah Blah Blah
     - [Date]: [Name] - Blah Blah Blah
 
@@ -53,30 +54,43 @@ Known Faults:
 from player import Player
 from gameClass import GameClass
 
+def main():
+    while True:
+        print("-----Welcome to Mafia-----")
+        print("\n")
 
-print("-----Welcome to Mafia-----")
-print("\n")
+        number_of_players = int(input("Enter number of players:"))
+        print("\n")
+        game1 = GameClass(number_of_players)
 
-
-number_of_players = int(input("Enter number of players:"))
-game1 = GameClass(number_of_players)
-
-#add players before starting the game
-for player in range(number_of_players):
-    game1.add_player()
-
-
-#not necessary for loop, just for checking players and roles
-for player in game1.player_list:
-    print("Name: ", player.name, "Role: ", player.role)
+        #add players before starting the game
+        for player in range(number_of_players):
+            game1.add_player()
 
 
-#main while loop that runs the full game until its completion
-while game1.gameCompleted == False:
-    game1.day_phase()
+        #not necessary for loop, just for checking players and roles
+        for player in game1.player_list:
+            print("Name: ", player.name, "Role: ", player.role)
+            print("\n")
 
 
-    if game1.gameCompleted == True:
-        break
+        #main while loop that runs the full game until its completion
+        while game1.gameCompleted == False:
+            game1.day_phase()
 
-    game1.night_phase()
+
+            if game1.gameCompleted == True:
+                break
+
+            game1.night_phase()
+
+        #Ask if the player wants to restart or exit
+        reset_choice = input("Game over! Type 'Reset' to play again or any other key to exit: ")
+        print("\n")
+        if reset_choice.lower() != "reset":
+            print("Thanks for playing!")
+            break
+
+
+if __name__ == "__main__":
+    main()
