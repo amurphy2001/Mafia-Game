@@ -48,6 +48,7 @@ class GameClass:
         print("Day Phase: Time to vote!")
         # Halt execution until the user presses any key to continue
         input("Press any key to continue...")
+        print("\n")
         # Loop through each player in the game
         for player in self.player_list:
             # Check if the player is alive. Only alive players can vote
@@ -60,6 +61,7 @@ class GameClass:
                 print("Players available to vote for:", ', '.join(alive_players)) 
                 # Prompt the player to enter the name of the player they want to eliminate
                 vote_for = input(f"{player.name}, who do you vote to eliminate? ")
+                print("\n")
                 vote_for = vote_for.lower()  # Convert input to lowercase for consistency
                 
                 # Ensure the player does not vote for themselves
@@ -140,6 +142,7 @@ class GameClass:
         # For MacOS and Linux
         else:
             os.system('clear')
+
 
 
 
