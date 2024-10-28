@@ -12,7 +12,7 @@ Revisions:
     - 10/25/2024: Jack - Created the three main files and implemented the basic game logic
     - 10/27/2024: Ethan - Created the day_phase and win_condion methods in gameClass
                         - Created this header
-    - [Date]: [Name] - Blah Blah Blah
+    - [Date]: Aiden - Created the main loop and revised some of the basic logic. Added endstate restart.
     - [Date]: [Name] - Blah Blah Blah
     - [Date]: [Name] - Blah Blah Blah
 
